@@ -1,8 +1,22 @@
 <?php
 
-function get_img($url, $alt, $height, $width) {
-    return '<img src=${url} alt="カエルのイラスト" title="雨の日のカエル">';
-  }
+function html_img($url, $alt = null, $height = null, $width = null) {
+    $html = '<img src="' . $url . '"';
+
+    if (isset($alt)) {
+        $html .= ' alt="' . $alt .'"';
+    }
+    if (isset($height)) {
+        $html .= ' height="' . $height . '"';
+    }
+    if (isset($width)) {
+        $html .= ' width="' . $width .'"';
+    }
+    $html .= '/>';
+    return $html;
+    
+}
+print html_img(23,33,32,33);
 
 ?>
 
