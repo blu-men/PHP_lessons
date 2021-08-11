@@ -16,7 +16,7 @@ function html_img($url, $alt = null, $height = null, $width = null) {
     return $html;
     
 }
-print html_img(23,33,32,33);
+print html_img(23, 24);
 
 ?>
 
