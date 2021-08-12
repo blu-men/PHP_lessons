@@ -1,7 +1,11 @@
 <?php
 
-function html_img($url, $alt = null, $height = null, $width = null) {
-    $html = '<img src="' . $url . '"';
+function html_img($file, $alt = null, $height = null, $width = null) {
+    if (isset($GLOBALS['image_path'])) {
+        $file = $GLOBALS['image_path'] . $file;
+    }
+
+    $html = '<img src="' . $file . '"';
 
     if (isset($alt)) {
         $html .= ' alt="' . $alt .'"';
@@ -16,7 +20,6 @@ function html_img($url, $alt = null, $height = null, $width = null) {
     return $html;
     
 }
-print html_img(23, 24);
 
 ?>
 
