@@ -1,25 +1,23 @@
 <?php
 
-function html_img($file, $alt = null, $height = null, $width = null) {
-    if (isset($GLOBALS['image_path'])) {
-        $file = $GLOBALS['image_path'] . $file;
+class Entree {
+    public $name;
+    public $ingredients = array();
+    public $sizes;
+
+    public function hasIngredient($ingredient) {
+        return in_array($ingredient, $this->ingredients);
     }
 
-    $html = '<img src="' . $file . '"';
-
-    if (isset($alt)) {
-        $html .= ' alt="' . $alt .'"';
+    public static function getSizes() {
+        return array('small','medium','large');
     }
-    if (isset($height)) {
-        $html .= ' height="' . $height . '"';
-    }
-    if (isset($width)) {
-        $html .= ' width="' . $width .'"';
-    }
-    $html .= '/>';
-    return $html;
-    
 }
+
+$sandwich = new Entree;
+$sandwich->sizes = Entree::getSizes();
+
+echo $sandwich->sizes;
 
 ?>
 
