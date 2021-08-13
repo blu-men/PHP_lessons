@@ -15,9 +15,8 @@ class Entree {
 }
 
 $sandwich = new Entree;
-$sandwich->sizes = Entree::getSizes();
+$sizes = Entree::getSizes();
 
-echo $sandwich->sizes;
-
+print $sizes;
 ?>
 
