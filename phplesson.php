@@ -3,7 +3,14 @@
 class Entree {
     public $name;
     public $ingredients = array();
-    public $sizes;
+
+    public function __construct($name, $ingredients) {
+        if (! is_array($ingredients)) {
+            throw new Exception('$ingredients must be an array');
+        }
+        $this->name = $name;
+        $this->ingredients = $ingredients;
+    }
 
     public function hasIngredient($ingredient) {
         return in_array($ingredient, $this->ingredients);
@@ -14,9 +21,10 @@ class Entree {
     }
 }
 
-$sandwich = new Entree;
-$sizes = Entree::getSizes();
+$drink = new Entree('Glass of Milk', 'milk');
+if ($drink->hasIngredient('milk')) {
+    print "Yummy!";
+}
 
-var_dump($sizes);
 ?>
 
