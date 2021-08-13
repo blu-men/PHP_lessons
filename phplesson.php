@@ -17,6 +17,6 @@ class Entree {
 $sandwich = new Entree;
 $sizes = Entree::getSizes();
 
-print $sizes;
+var_dump($sizes);
 ?>
 
